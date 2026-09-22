@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>metagarden</title>
+  <style>
+    /* CSS Reset 與基礎樣式 */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 20px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto 0;
+    }
+
+    /* 下載按鈕區塊 (RWD 彈性佈局) */
+    .download-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 60px;
+      width: 100%;
+    }
+
+    .badge-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      text-decoration: none;
+    }
+
+    .badge-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .badge-btn svg {
+      height: 60px;
+      width: auto;
+      max-width: 100%;
+    }
+
+    /* 文字說明區塊 */
+    .info-section {
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .info-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 32px;
+      letter-spacing: 1px;
+    }
+
+    .info-group {
+      margin-bottom: 24px;
+    }
+
+    .info-group .platform {
+      font-size: 0.95rem;
+      color: #666666;
+      margin-bottom: 6px;
+    }
+
+    .info-group .version {
+      font-size: 0.85rem;
+      color: #555555;
+      line-height: 1.5;
+    }
+
+    /* 頁尾版權宣告 */
+    footer {
+      font-size: 0.75rem;
+      color: #888888;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* 手機版適應 (RWD) */
+    @media (max-width: 480px) {
+      .badge-btn svg {
+        height: 52px;
+      }
+      .download-buttons {
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+      .info-title {
+        font-size: 1.25rem;
+        margin-bottom: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- 1. 下載按鈕區塊 -->
+    <div class="download-buttons">
+      <!-- App Store 按鈕 -->
+      <a href="https://apps.apple.com/us/app/%E6%A4%8D%E7%89%A9%E5%85%83-meta-garden/id6444713413" target="_blank" rel="noopener noreferrer" class="badge-btn" aria-label="Download on the App Store">
+        <svg viewBox="0 0 206 60" xmlns="http://www.w3.org/2000/svg">
+          <rect width="206" height="60" rx="12" fill="#000000"/>
+          <path d="M40.2 30.5c0-4.8 3.9-7.2 4.1-7.3-2.2-3.3-5.7-3.7-6.9-3.8-2.9-.3-5.7 1.7-7.2 1.7-1.5 0-3.8-1.7-6.2-1.6-3.2.1-6.1 1.9-7.8 4.8-3.4 5.8-.8 14.5 2.4 19.2 1.6 2.3 3.5 4.9 6 4.8 2.4-.1 3.3-1.5 6.2-1.5 2.9 0 3.7 1.5 6.2 1.5 2.5 0 4.2-2.3 5.7-4.6 1.8-2.6 2.5-5.2 2.6-5.3-.1 0-5.1-2-5.1-7.9zM34.8 16.7c1.3-1.6 2.2-3.8 2-6-.1 0-2.3.9-3.7 2.5-1.2 1.4-2.3 3.7-2 5.8 2.1.2 2.4-.7 3.7-2.3z" fill="#FFFFFF"/>
+          <text x="75" y="23" font-family="-apple-system, sans-serif" font-size="11" fill="#FFFFFF">Download on the</text>
+          <text x="75" y="44" font-family="-apple-system, sans-serif" font-size="21" font-weight="bold" fill="#FFFFFF">App Store</text>
+        </svg>
+      </a>
+
+      <!-- Google Play 按鈕 -->
+      <!-- 請將下方 href 的 # 替換為您的 Google Play 商店連結 -->
+      <a href="https://play.google.com/store/apps/details?id=com.FungsDesign.MetaG" target="_blank" rel="noopener noreferrer" class="badge-btn" aria-label="Get it on Google Play">
+        <svg viewBox="0 0 206 60" xmlns="http://www.w3.org/2000/svg">
+          <rect width="206" height="60" rx="12" fill="#000000"/>
+          <g transform="translate(18, 14)">
+            <path d="M1.3 1.1C1.1 1.4 1 1.8 1 2.4v27.2c0 .6.1 1 .3 1.3l.1.1 15.3-15.3v-.3L1.4 1z" fill="#00E676"/>
+            <path d="M21.8 21.8l-5.1-5.1v-.3l5.1-5.1.1.1 6.1 3.5c1.7 1 1.7 2.6 0 3.6l-6.2 3.3z" fill="#FFD54F"/>
+            <path d="M21.9 21.7L16.7 16.5 1.7 31.5c.6.6 1.5.7 2.5.1l17.7-9.9" fill="#FF3D00"/>
+            <path d="M21.9 11.3L4.2 1.4C3.2.8 2.3.9 1.7 1.5l15 15 5.2-5.2z" fill="#4FC3F7"/>
+          </g>
+          <text x="75" y="23" font-family="-apple-system, sans-serif" font-size="11" fill="#FFFFFF">GET IT ON</text>
+          <text x="75" y="44" font-family="-apple-system, sans-serif" font-size="21" font-weight="bold" fill="#FFFFFF">Google Play</text>
+        </svg>
+      </a>
+    </div>
+
+    <!-- 2. 系統適用說明 -->
+    <section class="info-section">
+      <h1 class="info-title">適用行動裝置系統</h1>
+
+      <div class="info-group">
+        <p class="platform">Android</p>
+        <p class="version">建議系統版本 Android 14以上（依手機廠牌相容性略有不同，請參照Google Play頁面指示）</p>
+      </div>
+
+      <div class="info-group">
+        <p class="platform">iOS</p>
+        <p class="version">建議系統版本 iOS 18 以上</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 3. 版權宣告 -->
+  <footer>
+    &copy;2022 metagarden
+  </footer>
+
+</body>
+</html>
